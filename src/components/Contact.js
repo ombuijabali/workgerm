@@ -36,37 +36,56 @@ const Contact = () => {
     e.preventDefault();
 
     const emailData = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formData.phone,
-      dateOfBirth: formData.dateOfBirth,
-      departureDate: formData.departureDate,
-      country: formData.country,
-      industry: formData.industry,
-      otherIndustry: formData.otherIndustry,
-      experience: formData.experience,
-      stayDuration: formData.stayDuration,
-      visitedBefore: formData.visitedBefore,
-      hasPassport: formData.hasPassport,
-      reason: formData.reason,
-      extraInfo: formData.extraInfo,
-      heardFrom: formData.heardFrom
+      to_name: "Germ Waves Team", // Replace with the actual recipient name
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      message: `
+First Name: ${formData.firstName}
+Last Name: ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Date of Birth: ${formData.dateOfBirth}
+Departure Date: ${formData.departureDate}
+Country: ${formData.country}
+Industry: ${formData.industry}
+${formData.industry === 'Other' ? `Other Industry: ${formData.otherIndustry}` : ''}
+Experience: ${formData.experience}
+Stay Duration: ${formData.stayDuration}
+Visited Before: ${formData.visitedBefore}
+Has Passport: ${formData.hasPassport}
+Reason: ${formData.reason}
+Extra Info: ${formData.extraInfo}
+Heard From: ${formData.heardFrom}
+      `.trim()
     };
 
-    // Sending email using EmailJS
-    emailjs
-      .send('service_4ve5lox', 'template_ghzcm1w', emailData, 'quIxVoLXuXpMksOyA')
-      .then(
-        (result) => {
-          alert('Form submitted and email sent!');
-          console.log(result.text);
-        },
-        (error) => {
-          alert('Failed to send email, please try again.');
-          console.error('Error sending email:', error);
-        }
-      );
+    emailjs.send('service_4ve5lox', 'template_ghzcm1w', emailData, 'quIxVoLXuXpMksOyA')
+      .then((result) => {
+        alert('Form submitted and email sent successfully!');
+        console.log(result.text);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          dateOfBirth: '',
+          departureDate: '',
+          country: '',
+          industry: '',
+          otherIndustry: '',
+          experience: '',
+          stayDuration: '',
+          visitedBefore: '',
+          hasPassport: '',
+          reason: '',
+          extraInfo: '',
+          heardFrom: '',
+          acceptTerms: false,
+          acceptDataPolicy: false
+        });
+      }, (error) => {
+        alert('Failed to send email. Please try again.');
+        console.error('Error sending email:', error);
+      });
   };
 
   return (
