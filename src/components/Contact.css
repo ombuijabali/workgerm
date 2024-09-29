@@ -1,0 +1,146 @@
+/* Overall form styling */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    color: #333;
+}
+
+.contact-form h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Form row styling */
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2980b9;
+    background-color: #ecf7ff;
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Industry dropdown styling */
+.industry-options select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.industry-options select:focus {
+    border-color: #2980b9;
+    background-color: #ecf7ff;
+    outline: none;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+    accent-color: #2980b9;
+}
+
+.checkbox-group label {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+/* Button styling */
+.submit-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #2980b9;
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #1e6f9f;
+}
+/* Small button styling */
+.small-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.contact-details{
+    text-align: right;
+    margin-top: 100px;
+    border: #2980b9;
+    background-color: #ffffff;
+}
+
+.map-container{
+    max-width: 80%;
+    margin-top: -240px;
+ 
+}
+
+/* Social media icons styling */
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #2980b9;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1e6f9f;
+}
